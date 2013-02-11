@@ -4,9 +4,10 @@ Javascript implementation of LHA extractor (-lh4-, static huffman) format. Requi
 
 Usage
 ------
+    var input = new Uint8Array(...);
 
     var lha = new LhaReader(new LhaArrayReader(input));
-    var output = lha.extract(Content.PakFileName, function(done, total) {
+    var output = lha.extract('file-in-archive.txt', function(done, total) {
 	    console.log('Extracting LHA data: ' + (done / total * 100) + '% complete.');
     });
 
